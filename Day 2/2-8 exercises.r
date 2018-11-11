@@ -6,16 +6,16 @@ rm(list = ls(globalenv()))
 # ======================================
 
 # lidR does not have a noise filter function. So far we used simple threshold to remove oulier below 0
-# and above 40. That was good enought because we are lucky. Outlier were strongly above the trees and
+# and above 40. That was good enough because we are lucky. Outlier were strongly above the trees and
 # the trees were all the same size (plantation). In a more complex context we can have low height outliers
-# that are in an areas with small trees surrounded by big trees. A thresold cannot help in this context.
+# that are in an area with small trees surrounded by big trees. A threshold cannot help in this context.
 #
-# The objective of this exercice is to developp a relatively simple but more advanced outlier removal
+# The objective of this exercise is to develop a relatively simple but more advanced outlier removal
 # function using lidR available tools.
 #
 # 1. Create your own noise filter function based on simple ideas (call it lasfilternoise)
-# 2. Test it on a file that have outliers
-# 3. Extent this function to make it applicable over an entiere catalog
+# 2. Test it on a file that has outliers
+# 3. Extend this function to make it applicable over an entire catalog
 
 las = readLAS("data/Farm_A/PRJ_A_207620_7357560_g_c_d_n_u.laz")
 plot(las)
@@ -64,9 +64,9 @@ spplot(new_ctg, c("Min.Z", "Max.Z"))
 # ======================================
 
 # We usually use simple statistics such as mean, sd, max, quantile of Z elevations from the point
-# cloud to build predictive model such as biomass = a*mean(Z) + b*max(Z) + c*sd(Z). I would like to
-# study if a we could improve such simple model types by integrating metrics derived from single tree
-# detection such as the number of tree. To do that we have:
+# cloud to build a predictive model such as biomass = a*mean(Z) + b*max(Z) + c*sd(Z). I would like to
+# study if we could improve such simple model types by integrating metrics derived from single tree
+# detection such as the number of trees. To do that we have:
 #
 #  - A shapefile Farm_A_plots.shp that contains ground truth inventories (plots)
 #  - Corresponding laz files with 400 m2 plots
@@ -160,8 +160,8 @@ ggplot(metrics) + aes(y = VCSC_pred, x = VCSC) + geom_point() + theme_light() + 
 #  An ABA/ITD mixed mapping
 # ======================================
 
-# The previous function was releatively easy to compute on 400 m2 files. It is more difficults to apply
-# it continously on a wall-to-wall catalog. To understand why you will modify the previous function
+# The previous function was relatively easy to compute on 400 m2 files. It is more difficult to apply
+# it continuously on a wall-to-wall catalog. To understand why you will modify the previous function
 # to map the same metrics on a raster with of resolution 20 m.
 
 ctg = catalog("data/Farm_A/")

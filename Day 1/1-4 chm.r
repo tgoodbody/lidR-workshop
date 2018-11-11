@@ -5,7 +5,7 @@ rm(list = ls(globalenv()))
 #    DIGITAL CANOPY MODEL
 # ======================================
 
-# The original dataset have a too high point density and provide too good output for the purpose
+# The original dataset has a too high point density and provides too good output for the purpose
 # of this example. I use the filter -keep_random_fraction to purposly degrade the output
 
 las = readLAS("data/MixedEucaNat_normalized.laz", filter = "-keep_random_fraction 0.4")
@@ -31,7 +31,7 @@ plot(chm, col = col)
 chm = grid_canopy(las, 0.5, p2r(0.15))
 plot(chm, col = col)
 
-# We can increase the radius but it does not necessarily have a meaning
+# We can increase the radius but it does not necessarily have any meaning
 chm = grid_canopy(las, 0.5, p2r(0.8))
 plot(chm, col = col)
 
@@ -65,11 +65,11 @@ plot(chm, col = col)
 # ================
 
 # Usually the CHM can be post-processed. Often post-processing consits in smoothing.
-# lidR does not have tools for that. Indeed lidR is point cloud oriented. Once you have
-# a raster this is the user responsability to manipulate this kind of data. The user is free
-# to do whatever he want within R or within external software such as GIS tools.
+# lidR has no tool for that. Indeed lidR is point cloud oriented. Once you have
+# a raster, it is the user responsability to manipulate this kind of data. The user is free
+# to do whatever he wants within R or within external software such as GIS tools.
 #
-# Here we can user the raster package and the focal function
+# Here we can use the raster package and the focal function
 
 ker <- matrix(1,3,3)
 schm <- focal(chm, w = ker, fun = mean, na.rm = TRUE)

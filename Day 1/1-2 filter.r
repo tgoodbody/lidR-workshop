@@ -12,7 +12,7 @@ las
 plot(las)
 
 
-# A. lasfilter* function allow for filtering point of interest algoritmically
+# A. lasfilter* function allows for filtering points of interest algoritmically
 # ============================================================================
 
 ?lasfilter
@@ -38,7 +38,7 @@ plot(surfacepoints)
 # ==============================
 
 # las + firstreturn + firstreturnover5 ~= 3 copies of the original point cloud. When manipulating
-# *big* data, one must be careful. Lidar point clouds maybe huge. Here it does not matters.
+# *big* data, one must be careful. Lidar point clouds may be huge. Here it does not matter.
 
 pryr::object_size(las)
 pryr::object_size(firstreturns)
@@ -55,13 +55,13 @@ las = lasfilter(las, Z > 5, ReturnNumber == 1)
 
 
 # The lasfilter* functions are really useful to the user to filter the data. But we must be careful
-# to the memory usage if we manipulate *big* data in memory. This is an specific limitation of R itself.
+# with the memory usage if we manipulate *big* data in memory. This is a specific limitation of R itself.
 # To get subset of the data we ACTUALLY NEED to make a copy of the dataset.
 
 # C. Be clever, use the filter argument from readLAS (streaing filter)
 # ==================================================
 
-# A more efficient filter (both in term of speed and memory) is to filter the points of interest
+# A more efficient filter (both in term of speed and memory) is filtering the points of interest
 # while reading the file. This way, no memory is uselessly allocated at the R level. Everything is
 # done at the C++ level.
 
@@ -70,6 +70,6 @@ las
 
 plot(las)
 
-# But some filter do not have streaming equivalent for exemple 'lasfiltersurfacepoint'
+# But some filter have no streaming equivalent, for example 'lasfiltersurfacepoint'
 
 

@@ -29,7 +29,7 @@ metrics = grid_metrics(las, list(hmax = max(Z), hmean = mean(Z)), 10)
 metrics
 plot(metrics, col = col)
 
-# For simplicity lidR propose a set of metrics
+# For simplicity lidR proposes a set of metrics
 
 metrics = grid_metrics(las, .stdmetrics_z, 10)
 metrics
@@ -42,7 +42,7 @@ plot(metrics, "zsd", col = col)
 # B. Advanced usage with user defined metrics
 # ===========================================
 
-# The strenght of the function is the ability to map almost everything
+# The strength of the function is the ability to map almost everything
 
 f = function(x, weight) { sum(x*weight)/sum(weight) }
 
@@ -50,7 +50,7 @@ X = grid_metrics(las, f(Z, Intensity), 10)
 
 plot(X, col = col)
 
-# C. Exercice and question
+# C. Exercise and questions
 # ===========================
 
 # 1. Assuming the biomass is predicted by this equation: B = 0.5 * mean Z + 0.9 * 90th percentile of Z

@@ -30,7 +30,7 @@ plot(chm, col = col)
 writeRaster(chm, "data/output/CHM_res_0.5.tiff")
 
 
-# B. CHM using the LAScatalog engine (advance options)
+# B. CHM using the LAScatalog engine (advanced options)
 # ==================================================
 
 ctg = catalog("data/Farm_A/")

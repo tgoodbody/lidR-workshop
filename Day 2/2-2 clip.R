@@ -92,7 +92,7 @@ las = readLAS(subsets1$filename[2])
 # lidar data do not match with satellite data (probably different times)
 plot(las)
 
-# D. Extraction of complexe geometries
+# D. Extraction of complex geometries
 # ====================================
 
 ctg      = catalog("data/Farm_A/")
@@ -101,7 +101,7 @@ planting = shapefile("data/shapefiles/Farm_A.shp")
 plot(planting)
 plot(ctg, map = F, add = T)
 
-# 1. clip from the shapefile and return the output in R (not recommanded)
+# 1. clip from the shapefile and return the output in R (not recommended)
 # ---------------------------------------------------
 
 # Do not run this snipets, it will load 1 GB of data in memory
@@ -111,7 +111,7 @@ las_planting = Filter(Negate(is.empty), las_planting)
 
 plot(las_planting[[2]])
 
-# 2. clip from the shapefile and write in files (recommanded)
+# 2. clip from the shapefile and write in files (recommended)
 # ---------------------------------------------------
 
 opt_output_files(ctg) <- "data/output/test_lasclip2/{OBJECTID}_{SUBTALHAO}_{FAZENDA}"
@@ -129,7 +129,7 @@ new_ctg$filename
 las = readLAS(new_ctg$filename[3], select = "xyz")
 plot(las, bg = "white")
 
-# E. Exercice: extract a ground inventory
+# E. Exercise: extract a ground inventory
 # ========================================
 
 # The shapefile in data/shapefiles/ named ground_inventories.shp contains centers of plots

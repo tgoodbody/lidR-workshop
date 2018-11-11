@@ -5,26 +5,26 @@ rm(list = ls(globalenv()))
 #       CATALOG FUNCTIONS
 # ======================================
 
-# We have already seen the function 'catalog'. It exists several other catalog_* functions
+# We have already seen the function 'catalog'. Several other catalog_* functions exist
 # - catalog_retile
 # - catalog_select
 # - catalog_intersect
 # And catalog_apply which is the more important function. It gives access to the catalog processing
-# engine. Each lidR function that manipulates a LAScatalog use internally catalog apply. With catalog
-# Apply you can build your own process
+# engine. Each lidR function that manipulates a LAScatalog uses internally catalog_apply. With catalog_
+# apply you can build your own process
 
 ?catalog_apply
 
 
-# A. Exemple of catalog apply
+# A. Example of catalog apply
 # =====================================
 
 # Compute a rumple index for each pixel in an ABA
 # - What is a rumple index? (see function rumple_index)
-# - On which points it makes sense to compute a rumple index?
-# - Rumple index is computationnaly demanding? How to compute it faster?
+# - On which points does it make sense to compute a rumple index?
+# - Rumple index is computationally demanding? How to compute it faster?
 #
-# - Load a single file, make a function that compute a pertinent RI on this single file
+# - Load a single file, make a function that computes a pertinent RI on this single file
 # - Scale up this function to apply it over the entire catalog
 
 ctg = catalog("data/Farm_A/")
@@ -72,4 +72,4 @@ output = do.call(merge, output)
 plot(output, col = height.colors(50))
 
 
-# B. Exercice
+# B. Exercise

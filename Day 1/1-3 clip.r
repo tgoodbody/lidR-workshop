@@ -35,8 +35,8 @@ plot(subsets1[[2]], )
 # B. Think about memory usage !!
 # ==============================
 
-# lasclip function are filter function. They create copies. When manipulating *big* data, one must
-# be careful. Lidar point clouds maybe huge. Here it does not matters.
+# lasclip functions are filter functions. They create copies. When manipulating *big* data, one must
+# be careful. Lidar point clouds may be huge. Here it does not matter.
 
 pryr::object_size(las)
 pryr::object_size(subset)
@@ -45,14 +45,14 @@ pryr::object_size(subset2)
 pryr::object_size(las, subset, subset2)
 
 
-# C. For simple geometrie we can use the filter argument from readLAS
+# C. For simple geometries we can use the filter argument from readLAS
 # ===================================================================
 
 subset3 = readLAS("data/MixedEucaNat_normalized.laz", select = "xyz", filter = "-keep_circle 203890 7358935 30")
 
 plot(subset3)
 
-# D. Extraction of complexe geomtries
+# D. Extraction of complex geomtries
 # ====================================
 
 planting = shapefile("data/shapefiles/MixedEucaNat.shp")

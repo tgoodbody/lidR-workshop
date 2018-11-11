@@ -40,7 +40,7 @@ plot(lasc, color = "in_plantation")
 not_plantation = lasfilter(lasc, in_plantation == FALSE)
 plot(not_plantation)
 
-# 2. With a raster of polygons
+# 2. With a raster
 # ----------------------------
 
 # In the past it was possible to get an easy access to the google map API via R to get satellite
@@ -75,8 +75,8 @@ pryr::object_size(lasc)
 
 pryr::object_size(las, lasc)
 
-# This is true for any lasfunction that do not change the number of points i.e
-# almost all functions but lasfilter*, lasclip* and lascheck
+# This is true for any lasfunction that does not change the number of points i.e
+# almost all the functions but lasfilter*, lasclip* and lascheck
 
 # C. lassmooth: point cloud based smoothing
 # =========================================
@@ -114,7 +114,7 @@ las_new = lasadddata(las, A, "Amplitute")
 
 las_new@header
 
-# lasaddextrabyte actually add data in a way that enable the data to be written in las files
+# lasaddextrabyte actually adds data in a way that enables the data to be written in las files
 
 las_new = lasaddextrabytes(las, A, "Amplitude", "Pulse amplitude")
 

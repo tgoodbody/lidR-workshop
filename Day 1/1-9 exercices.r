@@ -1,12 +1,12 @@
 # ======================================
-#              EXERCICES
+#              EXERCISES
 # ======================================
 
-# Read the file exercice_atlantic_forest.laz
+# Read the file exercise_atlantic_forest.laz
 
 las = readLAS("data/exercice_atlantic_forest.laz")
 
-# What does it contain? Is the ground segmented? What are the different point class?
+# What does it contain? Is the ground segmented? What are the different point classes?
 # Is it normalized? What is the point density? What is the point format? What is the difference
 # with the file we used during the workshop
 
@@ -29,7 +29,7 @@ lasn = lasfilter(lasn, Z >= 0)
 plot(lasn)
 
 # When ploting the original dataset, points are colored by their absolute height. When plotting the
-# normalized dataset the points are colored by their reletive height but the topography is no longer
+# normalized dataset the points are colored by their relative height but the topography is no longer
 # visible. Find a way to display the non-normalized data but colored with the relative height.
 
 Zcol = lasn$Z
@@ -50,5 +50,5 @@ las = lastrees(las, dalponte2016(chm, ttops, max_cr = 20))
 
 plot(las, color = "treeID", colorPalette = pastel.colors(500))
 
-# Is this segmentation good? How to impove it? Test another algorithm. Is it a good idea to process
+# Is this segmentation good enough? How to impove it? Test another algorithm. Is it a good idea to process
 # non-normalized data? What to you propose to improve these results?

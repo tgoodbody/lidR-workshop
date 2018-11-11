@@ -5,7 +5,7 @@ rm(list = ls(globalenv()))
 #  READ DATA AND VISUALIZE THE CONTENT
 # ======================================
 
-# A. Basic usages
+# A. Basic usage
 # =======================
 
 # 1. Read a file and understand its content
@@ -64,7 +64,7 @@ las = readLAS("data/MixedEucaNat_normalized.laz", filter = "-keep_first")
 
 plot(las, )
 
-# C. LAS object are Spatial object from sp
+# C. LAS objects are Spatial objects from sp
 # =========================================
 
 projection(las)
@@ -94,7 +94,7 @@ lascheck(las)
 plot(las, color = "RGB")
 
 
-# E. Exercice and/or question
+# E. Exercise and/or questions
 # =============================
 
 # 1. Why do we work with las/laz files instead of text files?

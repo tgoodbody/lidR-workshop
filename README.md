@@ -1,14 +1,14 @@
-This repository contains the material for a two days lidR workshop. **Before** to attend the workshop you need to read this readme carefully to:
+This repository contains the material for a two days lidR workshop. **Before** attending the workshop you need to read this readme carefully to:
 
-1. Dowload the material needed to follow this workshop
+1. Download the material needed to follow this workshop
 2. Install the proper softwares and packages 
-3. Check that everything works **before** to attend the workshop
+3. Check that everything works **before** attending the workshop
 
 Please refer to Luiz Carlos or Tiago if you have any trouble with one of these steps before the workshop.
 
 ## 1. Material
 
-To follow this workshop you need to dowload the content of this repository. It contains the code, the shapefiles and the lidar data we will use during the workshop.
+To follow this workshop you need to download the content of this repository. It contains the code, the shapefiles and the lidar data we will use during the workshop.
 
 ## 2. R version and Rstudio
 
@@ -17,7 +17,7 @@ To follow this workshop you need to dowload the content of this repository. It c
 
 ## 3. R Packages
 
-You need to install the following packages from the CRAN prior to install the `lidR` package. Many of them are likely to be already installed on your machine. The reason you need to do that first is because we will use the new version of `lidR` that is not avaible on CRAN yet.
+You need to install the following packages from the CRAN prior to install the `lidR` package. Many of them are likely to be already installed on your machine. The reason you need to do that first is because we will use the new version of `lidR` that is not available on CRAN yet.
 
 ```r
 install.packages(assertive,concaveman,data.table,future,geometry,glue,grDevices,gstat,lazyeval,imager,RANN,Rcpp,RCSF,rgeos,rgl,rlas,sf,stats,tools,utils)
@@ -84,7 +84,7 @@ devtools::install_github("Jean-Romain/lidR", ref="devel")
 
 ## 5. Check that everything is ok
 
-Once everything is installed run the following script to ensure everything is ok. For example sometime Mac users encounter issues with 3D display. This issue is not related to the `lidR` package itself but must be fixed to enjoy the workshop. Please report any trouble before the workshop.
+Once everything is installed run the following script to ensure everything is ok. For example sometimes Mac users encounter issues with 3D display. This issue is not related to the `lidR` package itself but must be fixed to enjoy the workshop. Please report any trouble before the workshop.
 
 ```r
 library(RCurl)

@@ -5,7 +5,7 @@ rm(list = ls(globalenv()))
 #  READ DATA AND VISUALIZE THE CONTENT
 # ======================================
 
-# A. Basic usages
+# A. Basic usage
 # =======================
 
 # 1. Read a catalog and understand its content

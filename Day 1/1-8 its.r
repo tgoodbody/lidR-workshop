@@ -18,7 +18,7 @@ col2 = pastel.colors(900)
 chm = grid_canopy(las, 0.5, p2r(0.15))
 plot(chm, col = col1)
 
-# 2. Optionnaly smooth the CHM
+# 2. OptionaLly smooth the CHM
 # ----------------------------
 
 kernel = matrix(1,3,3)
@@ -50,8 +50,8 @@ plot(tree125)
 # 5. Working with raster
 # --------------------------------
 
-# As said previously lidR deal with point cloud. Thus we used lastrees.
-# But here from the CHM the point cloud is not strictly requiered.
+# As said previously lidR deals with point clouds. Thus we used lastrees.
+# But here from the CHM the point cloud is not strictly required.
 
 trees = dalponte2016(chm = chm, treetops = ttops)()
 
@@ -89,9 +89,9 @@ las = lastrees(las, li2012())
 
 plot(las, color = "treeID", colorPalette = col2)
 
-# This algorithm does not seems pertinent for such dataset.
+# This algorithm does not seem pertinent for such a dataset.
 
-# C. Extraction de metriques
+# C. Extraction of metrics
 # ==========================
 
 ttops = tree_detection(schm, lmf(2.5))
@@ -130,7 +130,7 @@ spplot(metrics, "A")
 metrics = tree_metrics(las, .stdtreemetrics)
 metrics
 
-# 4. tree_hull give several kind of tree hull
+# 4. tree_hull give several kinds of tree hull
 # -------------------------------------------
 
 # convex hull
@@ -163,4 +163,4 @@ spplot(ccv_hulls, "Z")
 # - lasclip*: to select regions of interest (return LAS objects)
 # - grid_*: to rasterize the point cloud (return Raster* objects)
 # - las*: to modify las data (return LAS objects)
-# - tree_*: that procees point cloud at tree level (return Spatial* objects)
+# - tree_*: that processes point cloud at tree level (return Spatial* objects)

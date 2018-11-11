@@ -6,11 +6,11 @@ rm(list = ls(globalenv()))
 # ======================================
 
 
-# A. Exercice
+# A. Exercise
 # ================================
 
 # The function lasfilterdecimate can be applied to a LAScatalog
-# - look at the avaible options
+# - look at the available options
 # - Decimate the catalog from 30 pt/m² to 5 pt/m²
 # - Remove points below 0 and above 40 in the same time.
 
