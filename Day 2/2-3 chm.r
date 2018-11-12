@@ -82,13 +82,23 @@ plot(p, col = col)
 ctg = catalog("data/Farm_A/")
 opt_filter(ctg) <- "-drop_withheld -drop_z_below 0 -drop_z_above 40"
 
-# Base (~20 s)
-system.time(grid_canopy(ctg, 1, p2r()))
+# Using laz + lax files
+system.time(grid_canopy(ctg, 1, p2r()))       # 20 sec
 
-# Remove lax file (~40 s)
-system.time(grid_canopy(ctg, 1, p2r()))
+# Using laz files only (removing lax file)
+system.time(grid_canopy(ctg, 1, p2r()))       # 40 sec
 
-# use several core and lax files (~20 sec)
+# Using laz + lax files + 2 cores
 opt_cores(ctg) <- 2
-system.time(grid_canopy(ctg, 1, p2r()))
+system.time(grid_canopy(ctg, 1, p2r()))       # 20 sec
 
+# Use las + laz files
+ctg = catalog("~/Téléchargements/Farm_A/")
+opt_filter(ctg) <- "-drop_withheld -drop_z_below 0 -drop_z_above 40"
+plot(ctg)
+
+system.time(grid_canopy(ctg, 1, p2r()))       # 7 sec
+
+# Use las + laz files + multicore
+opt_cores(ctg) <- 3
+system.time(grid_canopy(ctg, 1, p2r()))       # 7 sec
