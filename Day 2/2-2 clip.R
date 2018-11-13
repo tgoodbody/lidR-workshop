@@ -137,10 +137,3 @@ plot(las, bg = "white")
 
 ctg = catalog("data/Farm_A/")
 plot_centers = shapefile("data/shapefiles/ground_inventories.shp")
-
-plot(ctg)
-plot(plot_centers, add = T, col = "red")
-
-summary(ctg)
-
-lasclip(ctg, plot_centers, radius = 20)

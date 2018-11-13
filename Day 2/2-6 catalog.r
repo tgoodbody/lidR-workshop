@@ -70,6 +70,3 @@ output = catalog_apply(ctg, grid_rumple_index, res1 = 20, res2 = 0.5)
 output = do.call(merge, output)
 
 plot(output, col = height.colors(50))
-
-
-# B. Exercise
