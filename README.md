@@ -1,10 +1,4 @@
-This repository contains the material for a two days lidR workshop. **Before** attending the workshop you need to read this readme carefully to:
-
-1. Download the material needed to follow this workshop
-2. Install the proper softwares and packages 
-3. Check that everything works **before** attending the workshop
-
-Please refer to Luiz Carlos or Tiago if you have any trouble with one of these steps before the workshop.
+This repository contains the material for a two days lidR workshop. You can install the material on your own machine following this README.
 
 ## 1. Material
 
@@ -12,7 +6,7 @@ To follow this workshop you need to download the content of this repository. It 
 
 ## 2. R version and Rstudio
 
-* You need to install a recent version of `R` i.e. `R 3.4.4` or `R 3.5.1`.
+* You need to install a recent version of `R` i.e. `R 3.4.4` or `R 3.5.1` (recommended).
 * We will work with [Rstudio](https://www.rstudio.com/). This IDE is not mandatory to follow the workshop but is highly recommended.
 
 ## 3. R Packages
@@ -43,14 +37,15 @@ install.packages(dplyr,ggplo2,pryr)
 
 ## 4. lidR package
 
-We will not use the released version of lidR available on CRAN (version1.6.1), but the development version (version 2.0.0) which is not available yet on CRAN and which is deeply different from the previous release. Thus you need to install the package manually following these simple steps.
+We will not use the released version of lidR available on CRAN (version 1.6.1), but the development version (version 2.0.0) which is not available yet on CRAN and which is deeply different from the previous release. Thus you need to install the package manually following these simple steps.
 
 ### Windows
 
-I already prepared two binaries for Windows. Download your version:
+I already prepared binaries for Windows. Download your version:
 
-* For R 3.4.y:
-* For R 3.5.y:
+* For R 3.6: [here](https://drive.google.com/open?id=1dchHA6fIT8TipXAkXUYX-vmhnWGNJtUZ)
+* For R 3.5: [here](https://drive.google.com/open?id=1EEUpN2m344VWbf_VsYnUrxuiV63e8ngT)
+* For R 3.4: [here](https://drive.google.com/open?id=1Sfd_8uAY7xI4SNWrscsi1v03y_LA2ZVm)
 
 And then run the following code to select and install the file you downloaded.
 
