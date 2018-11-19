@@ -67,6 +67,32 @@ plot(layer)
 not_layer = lasfilter(lasc, Z < hchm - 1)
 plot(not_layer)
 
+# 3. Extra example that works only with my modified version of dismo
+# ------------------------------------------------------------------
+
+library(dismo)
+
+bbox  <- extent(las)
+proj4 <- proj4string(las)
+
+r <- raster()
+extent(r) <- bbox
+proj4string(r) <- proj4
+
+gm  <- gmap(x = r, type = "satellite", scale = 1, rgb = TRUE)
+plotRGB(gm)
+
+gm <- projectRaster(gm, crs = proj4)
+
+
+las <- lidR:::lasmergergb(las, gm)
+las
+
+plot(las, color = "RGB", nbits = 8)
+
+lascheck(las)
+
+
 # B. Memory usage consideration
 # ===============================
 
