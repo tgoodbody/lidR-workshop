@@ -68,6 +68,7 @@ not_layer = lasfilter(lasc, Z < hchm - 1)
 plot(not_layer)
 
 # 3. Extra example that works only with my modified version of dismo
+#    and a google map API key.
 # ------------------------------------------------------------------
 
 library(dismo)
@@ -79,16 +80,14 @@ r <- raster()
 extent(r) <- bbox
 proj4string(r) <- proj4
 
-gm  <- gmap(x = r, type = "satellite", scale = 1, rgb = TRUE)
+gm  <- gmap(x = r, type = "satellite", scale = 2, rgb = TRUE)
 plotRGB(gm)
 
 gm <- projectRaster(gm, crs = proj4)
 
+las <- lasmergespatial(las, gm)
 
-las <- lidR:::lasmergergb(las, gm)
-las
-
-plot(las, color = "RGB", nbits = 8)
+plot(las, color = "RGB")
 
 lascheck(las)
 
