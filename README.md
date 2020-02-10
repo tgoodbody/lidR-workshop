@@ -1,4 +1,4 @@
-This repository contains the material for a two days `lidR` workshop as well as the material for its 2 hours versions. You can install the material on your own machine following this README.
+This repository contains the material for a two days `lidR` workshop as well as the material for its 2 hours versions and its 20 minutes showcase version. You can install the material on your own machine following this README.
 
 ## 1. Material
 
@@ -11,7 +11,7 @@ To follow this workshop you need to download the content of this repository. It 
 
 ## 3. R Packages
 
-You need to install the `lidR` package in its latest version (v2.2.1). 
+You need to install the `lidR` package in its latest version (v2.2.2). 
 
 ```r
 install.packages("lidR")
