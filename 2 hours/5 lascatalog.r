@@ -56,7 +56,7 @@ plot(chm, col = height.colors(50))
 # ==========================================
 
 opt_filter(ctg) <- "-drop_withheld  -drop_z_below 0 -drop_z_above 40"
-model = grid_metrics(ctg, ~6*mean(Z) -2*max(Z) - 0.05*mean(Intensity + 100), 10)
+model = grid_metrics(ctg, ~6*mean(Z) -2*max(Z) - 0.05*mean(Intensity) + 100, 10)
 plot(model, col = height.colors(50))
 
 opt_filter(ctg) <- "-drop_withheld  -drop_z_below 0 -drop_z_above 40 -keep_first"
