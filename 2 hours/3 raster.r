@@ -16,13 +16,31 @@ plot(las)
 # A. Many algorithm available
 # ===============================
 
+# Point to raster method
+chm = grid_canopy(las, 1, p2r())
+plot(chm, col = col)
+
+chm = grid_canopy(las, 0.5, p2r())
+plot(chm, col = col)
+
 # The option subcircle turns each point into a disc of 8 points with a radius r
 chm = grid_canopy(las, 0.5, p2r(0.15))
 plot(chm, col = col)
 
+# Pitfree methods
 thresholds = c(0,5,10,20,25, 30)
 max_edge = c(0, 1.35)
 chm = grid_canopy(las, 0.5, pitfree(thresholds, max_edge))
+plot(chm, col = col)
+
+# On another example
+LASfile <- system.file("extdata", "MixedConifer.laz", package="lidR")
+las <- readLAS(LASfile)
+
+chm = grid_canopy(las, 0.8, p2r(0.15))
+plot(chm, col = col)
+
+chm <- grid_canopy(las, res = 0.8, pitfree(c(0,2,5,10,15), c(0, 2), 0.15))
 plot(chm, col = col)
 
 # ======================================
@@ -44,7 +62,7 @@ x = plot(las)
 add_dtm3d(x, dtm)
 
 dtm = grid_terrain(las, 1, knnidw())
-plot(dtm)
+plot(dtm, col = col)
 plot_dtm3d(dtm)
 
 # ======================================

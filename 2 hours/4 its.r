@@ -32,7 +32,7 @@ plot(schm, col = height.colors(30))
 ttops = tree_detection(schm, lmf(2.5))
 
 plot(chm, col = col1)
-plot(ttops, col = "black", add = T)
+plot(ttops, col = "black", add = T, cex = 0.5)
 
 # 4. Segmentation
 # -----------------
@@ -56,7 +56,7 @@ plot(tree125)
 trees = dalponte2016(chm = chm, treetops = ttops)()
 
 plot(trees, col = col2)
-plot(ttops, add = TRUE)
+plot(ttops, add = TRUE, cex = 0.5)
 
 # B. Point cloud based methods (No CHM)
 # =====================================
@@ -67,7 +67,7 @@ plot(ttops, add = TRUE)
 ttops = tree_detection(las, lmf(3, hmin = 5))
 
 x = plot(las)
-add_treetops3d(x, ttops)
+add_treetops3d(x, ttops, radius = .75)
 
 # 3. Tree segmentation
 # --------------------
@@ -91,7 +91,7 @@ plot(las, color = "treeID", colorPalette = col2)
 
 metrics = tree_metrics(las, list(n = length(Z)))
 metrics
-spplot(metrics, "n")
+spplot(metrics, "n", cex = 0.8)
 
 # 2. It maps any user's function at the tree level
 # -----------------------------------------------
@@ -109,7 +109,7 @@ f = function(x, y)
 
 metrics = tree_metrics(las, f(X,Y))
 metrics
-spplot(metrics, "A")
+spplot(metrics, "A", cex = 0.8)
 
 # 3. Some metrics are already recorded
 # ------------------------------------
@@ -117,7 +117,7 @@ spplot(metrics, "A")
 metrics = tree_metrics(las, .stdtreemetrics)
 metrics
 
-spplot(metrics, "convhull_area")
+spplot(metrics, "convhull_area", cex = 0.8)
 spplot(metrics, "Z")
 
 # 4. tree_hull: the same but with hull

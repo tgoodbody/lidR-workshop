@@ -20,6 +20,7 @@ plot(las)
 plot(surflas)
 
 ri = grid_metrics(las, rumple_index(X,Y,Z), 10)
+plot(ri)
 
 # Solution
 # ------------------
